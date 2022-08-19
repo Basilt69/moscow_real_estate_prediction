@@ -13,15 +13,27 @@ def get_location_names():
 
     return response
 
+@app.route('/get_material_names')
+def get_material_names():
+    response = jsonify({
+        'materials':util.get_material_names()
+    })
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response
+
 @app.route('/predict_home_price', method=['POST'])
 def predict_home_price():
-    total_sqft = float(request.form['total_sqft'])
+    materials = request.form['materials']
+    area_total = float(request.form['area_total'])
+    kitchen_area = float(request.form['kitchen_area'])
     location = request.form['location']
-    bhk = int(request.form['bhk'])
-    bath = int(request.form['bath'])
+    floor_number = int(request.form['floor_number'])
+    floors_total = int(request.form['floors_total'])
 
     response = jsonify({
-        'estimated_price': util.get_estimated_price(location, total_sqft, bhk, bath)
+        'estimated_price': util.get_estimated_price(materials,floor_number, floors_total, area_total,kitchen_area,
+                                                    location)
     })
     return response
 
