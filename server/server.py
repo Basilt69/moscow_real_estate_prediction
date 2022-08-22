@@ -25,7 +25,7 @@ def get_material_names():
 @app.route('/predict_home_price', method=['POST'])
 def predict_home_price():
     materials = request.form['materials']
-    area_total = float(request.form['area_total'])
+    area_total = float(request.form['area'])
     kitchen_area = float(request.form['kitchen_area'])
     location = request.form['location']
     floor_number = int(request.form['floor_number'])

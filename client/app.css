@@ -46,31 +46,48 @@
 }
 
 .form {
-	max-width: 270px;
+	max-width: 400px;
 	font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
 	font-weight: normal;
 	line-height: 1.625;
 	margin: 8px auto;
-	padding-left: 16px;
+	padding-left: 0px;
 	z-index: 2;
+	text-align: center;
+
 }
 
 h2 {
-	font-size: 18px;
-	margin-bottom: 8px;
+	font-size: 16px;
+	margin-bottom: 4px;
+	text-align: center;
 }
 .area{
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
   width: 76%;
-  border: 0;
+  border: 100;
   margin: 0 0 10px;
   padding: 10px;
   box-sizing: border-box;
   font-size: 15px;
   height: 35px;
-  border-radius: 5px;
+  border-radius: 150px;
+}
+
+.kitchen_area{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 76%;
+  border: 100;
+  margin: 0 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 35px;
+  border-radius: 150px;
 }
 
 .location{
@@ -78,13 +95,41 @@ h2 {
   outline: 0;
   background: #f2f2f2;
   width: 76%;
-  border: 0;
+  border: 100;
   margin: 0 0 10px;
   padding: 10px;
   box-sizing: border-box;
   font-size: 15px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 150px;
+}
+
+.floors_total{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 76%;
+  border: 100;
+  margin: 0 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 35px;
+  border-radius: 150px;
+}
+
+.desired_floor{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 76%;
+  border: 100;
+  margin: 0 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  height: 35px;
+  border-radius: 150px;
 }
 
 .material{
@@ -92,36 +137,37 @@ h2 {
   outline: 0;
   background: #f2f2f2;
   width: 76%;
-  border: 0;
+  border: 100;
   margin: 0 0 10px;
   padding: 10px;
   box-sizing: border-box;
   font-size: 15px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 150px;
 }
 
 .submit{
   background: #a5dc86;
   width: 76%;
-  border: 0;
+  border: 100;
   margin: 25px 0 10px;
   box-sizing: border-box;
   font-size: 15px;
 	height: 35px;
 	text-align: center;
-	border-radius: 5px;
+	border-radius: 150px;
 }
 
 .result{
-		background: #dcd686;
-		width: 76%;
-		border: 0;
-		margin: 25px 0 10px;
-		box-sizing: border-box;
-		font-size: 15px;
-		height: 35px;
-		text-align: center;
+          background: #dcd686;
+          width: 76%;
+          border: 100;
+          margin: 12%;
+          box-sizing: border-box;
+          font-size: 15px;
+		  height: 35px;
+    	  text-align: center;
+		  border-radius: 150px;
 }
 
 .img {

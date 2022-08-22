@@ -1,28 +1,10 @@
-function getBathValue() {
-  var uiBathrooms = document.getElementsByName("uiBathrooms");
-  for(var i in uiBathrooms) {
-    if(uiBathrooms[i].checked) {
-        return parseInt(i)+1;
-    }
-  }
-  return -1; // Invalid Value
-}
-
-function getBHKValue() {
-  var uiBHK = document.getElementsByName("uiBHK");
-  for(var i in uiBHK) {
-    if(uiBHK[i].checked) {
-        return parseInt(i)+1;
-    }
-  }
-  return -1; // Invalid Value
-}
 
 function onClickedEstimatePrice() {
   console.log("Estimate price button clicked");
-  var sqft = document.getElementById("uiSqft");
-  var bhk = getBHKValue();
-  var bathrooms = getBathValue();
+  var sqmt = document.getElementById("uiSqmt");
+  var kitch_sqmt = document.getElementById("uiKitchSqmt");
+  var floors_total = document.getElementById("uiFloors");
+  var desired_floor = document.getElementById("uiFloorDes");
   var location = document.getElementById("uiLocations");
   var material = document.getElementById("uiMaterials");
   var estPrice = document.getElementById("uiEstimatedPrice");
@@ -31,9 +13,10 @@ function onClickedEstimatePrice() {
   //var url = "/api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
 
   $.post(url, {
-      total_sqft: parseFloat(sqft.value),
-      bhk: bhk,
-      bath: bathrooms,
+      total_sqmt: parseFloat(sqmt.value),
+      kitchen_area: parseFloat(kitch_sqmt.value),
+      floors_total: parseInt(floor_total.value),
+      floor_number: parseInt(desired_floor.value),
       location: location.value
       material: material.value
   },function(data, status) {

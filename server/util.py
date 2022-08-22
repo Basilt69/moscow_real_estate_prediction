@@ -8,6 +8,7 @@ __data_columns = None
 __model = None
 __materials = None
 
+
 def get_estimated_price(materials, floor_number, floors_total, area_total, kitchen_area, location):
     try:
         loc_index = __data_columns.index(location.lower())
@@ -47,6 +48,7 @@ def load_saved_artifacts():
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[12:]
         __materials = __data_columns[5:12]
+
 
     global __model
     with open("./artifacts/moscow_real_estate_pred.pickle",'rb') as f:
