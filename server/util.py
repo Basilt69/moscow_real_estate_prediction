@@ -48,7 +48,7 @@ def load_saved_artifacts():
     with open("./artifacts/columns.json", 'r') as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[12:]
-        __materials = __data_columns[4:12]
+        __materials = __data_columns[4:11]
 
 
     global __model
@@ -60,3 +60,9 @@ def load_saved_artifacts():
 if __name__ == '__main__':
     load_saved_artifacts()
     print(get_location_names())
+    #print(get_estimated_price('panel',1, 5.0, 18.0, 3.0, 'metro station "Pionerskaya", Malaya Filevskaya street, ' \
+                                                #'Fili-Davydkovo District, Moscow, Central Federal District, 121433, '
+                                                         #'Russia'))
+    #print(get_estimated_price('panel',1, 6.0, 20.0, 3.0, 'metro station "Pionerskaya", Malaya Filevskaya street, ' \
+                                                #'Fili-Davydkovo District, Moscow, Central Federal District, 121433, '
+                                                         #'Russia'))
