@@ -22,7 +22,7 @@ def get_material_names():
 
     return response
 
-@app.route('/predict_home_price', method=['POST'])
+@app.route('/predict_home_price', methods=['GET','POST'])
 def predict_home_price():
     materials = request.form['materials']
     area_total = float(request.form['area'])
