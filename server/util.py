@@ -10,10 +10,10 @@ __model = None
 __materials = None
 
 
-def get_estimated_price(materials, floor_number, floors_total, area_total, kitchen_area, location):
+def get_estimated_price(material, floor_number, floors_total, area_total, kitchen_area, location):
     try:
         loc_index = __data_columns.index(location.lower())
-        material_index = __data_columns.index(materials.lower())
+        material_index = __materials.index(material.lower())
     except:
         loc_index = -1
         material_index = -1
@@ -36,8 +36,10 @@ def get_estimated_price(materials, floor_number, floors_total, area_total, kitch
 def get_location_names():
     return __locations
 
+
 def get_material_names():
     return __materials
+
 
 def load_saved_artifacts():
     print("loading saved artifacts ... start")
@@ -57,12 +59,9 @@ def load_saved_artifacts():
     print("loading saved artifacts ... done")
 
 
+def get_data_columns():
+    return __data_columns
+
+
 if __name__ == '__main__':
     load_saved_artifacts()
-    print(get_location_names())
-    #print(get_estimated_price('panel',1, 5.0, 18.0, 3.0, 'metro station "Pionerskaya", Malaya Filevskaya street, ' \
-                                                #'Fili-Davydkovo District, Moscow, Central Federal District, 121433, '
-                                                         #'Russia'))
-    #print(get_estimated_price('panel',1, 6.0, 20.0, 3.0, 'metro station "Pionerskaya", Malaya Filevskaya street, ' \
-                                                #'Fili-Davydkovo District, Moscow, Central Federal District, 121433, '
-                                                         #'Russia'))

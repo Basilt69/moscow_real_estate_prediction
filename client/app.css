@@ -62,7 +62,7 @@ h2 {
 	margin-bottom: 4px;
 	text-align: center;
 }
-.area{
+.area_total{
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -118,7 +118,7 @@ h2 {
   border-radius: 150px;
 }
 
-.desired_floor{
+.floor_number{
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -132,7 +132,7 @@ h2 {
   border-radius: 150px;
 }
 
-.material{
+.materials{
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
