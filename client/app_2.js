@@ -1,22 +1,32 @@
 
 function onClickedEstimatePrice() {
   console.log("Estimate price button clicked");
-  var sqmt = document.getElementById("uiSqmt");
-  var kitch_sqmt = document.getElementById("uiKitchSqmt");
+  var area_total = document.getElementById("uiSqmt");
+  var kitchen_area = document.getElementById("uiKitchSqmt");
   var floors_total = document.getElementById("uiFloors");
-  var desired_floor = document.getElementById("uiFloorDes");
+  var floor_number = document.getElementById("uiFloorDes");
   var location = document.getElementById("uiLocations");
   var material = document.getElementById("uiMaterials");
   var estPrice = document.getElementById("uiEstimatedPrice");
 
-   var url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
+  var url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
   //var url = "/api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+  var data = {
+    area_total:parseFloat(area_total.value),
+    kitchen_area:parseFloat(kitchen_area.value),
+    floors_total:parseInt(floors_total.value),
+    floor_number:parseInt(floor_number.value),
+    location:location.value,
+    material:material.value
+  }
+
+  console.log(data)
 
   $.post(url, {
-      total_sqmt: parseFloat(sqmt.value),
-      kitchen_area: parseFloat(kitch_sqmt.value),
-      floors_total: parseInt(floor_total.value),
-      floor_number: parseInt(desired_floor.value),
+      area_total: parseFloat(area_total.value),
+      kitchen_area: parseFloat(kitchen_area.value),
+      floors_total: parseInt(floors_total.value),
+      floor_number: parseInt(floor_number.value),
       location: location.value,
       material: material.value
   },function(data, status) {
@@ -28,10 +38,10 @@ function onClickedEstimatePrice() {
 
 function onPageLoad() {
   console.log( "document loaded" );
-  var url = "http://127.0.0.1:5000/get_location_names"; // Use this if you are NOT using nginx which is first 7
+  var url_1 = "http://127.0.0.1:5000/get_location_names"; // Use this if you are NOT using nginx which is first 7
   //tutorials
   //var url = "/api/get_location_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
-  $.get(url,function(data, status) {
+  $.get(url_1,function(data, status) {
       console.log("got response for get_location_names request");
       if(data) {
           var locations = data.locations;
@@ -43,14 +53,10 @@ function onPageLoad() {
           }
       }
   });
-}
-
-function onPageLoad() {
-  console.log( "document loaded" );
-  var url = "http://127.0.0.1:5000/get_material_names"; // Use this if you are NOT using nginx which is first 7
-  tutorials
+  var url_2 = "http://127.0.0.1:5000/get_material_names"; // Use this if you are NOT using nginx which is first 7
+  //tutorials
   //var url = "/api/get_material_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
-  $.get(url,function(data, status) {
+  $.get(url_2,function(data, status) {
       console.log("got response for get_material_names request");
       if(data) {
           var materials = data.materials;
