@@ -1,5 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+@-ms-viewport {
+ width: device-width;
+}
+@-o-viewport {
+ width: device-width;
+}
+@viewport {
+ width: device-width;
+}
+
 .switch-field {
 	display: flex;
 	margin-bottom: 36px;
