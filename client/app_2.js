@@ -39,9 +39,8 @@ function onClickedEstimatePrice() {
 
 function onPageLoad() {
   console.log( "document loaded" );
-  //var url_1 = "http://127.0.0.1:5000/get_location_names"; // Use this if you are NOT using nginx which is first 7
-  //tutorials
-  var url_1 = "/api/get_location_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+  //var url_1 = "http://127.0.0.1:5000/get_location_names"; // Use this if you are NOT using nginx 
+  var url_1 = "/api/get_location_names"; // can be used if  nginx server is apllied
   $.get(url_1,function(data, status) {
       console.log("got response for get_location_names request");
       if(data) {
@@ -54,9 +53,8 @@ function onPageLoad() {
           }
       }
   });
-  //var url_2 = "http://127.0.0.1:5000/get_material_names"; // Use this if you are NOT using nginx which is first 7
-  //tutorials
-  var url_2 = "/api/get_material_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+  //var url_2 = "http://127.0.0.1:5000/get_material_names"; // Use this if you are NOT using nginx
+  var url_2 = "/api/get_material_names"; // can be used if  nginx server is apllied
   $.get(url_2,function(data, status) {
       console.log("got response for get_material_names request");
       if(data) {
